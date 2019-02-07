@@ -19,8 +19,8 @@ class OutputLines
       @highlight(@renderingCache[line] ||= @render(line))
 
 class @ClusterizeOutputLines extends OutputLines
-  constructor: (@screen, @render) ->
-    super
+  constructor: (screen, render) ->
+    super(...arguments)
     @raw = []
     @query = ''
     @highlightRegexp = null
@@ -28,7 +28,7 @@ class @ClusterizeOutputLines extends OutputLines
 
   append: (lines) ->
     @raw = @raw.concat(lines)
-    super
+    super(...arguments)
 
   setFilter: (query) ->
     if @query = query
