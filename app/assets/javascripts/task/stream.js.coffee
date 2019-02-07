@@ -42,7 +42,7 @@ class @Stream
     @retries = 0
     @broadcastOutput(response.output, response)
     @broadcastStatus(response.status, response)
-    @start(response.url || false)
+    return @start(response.url || false)
 
   broadcastStatus: (status, args...) ->
     if status != @status
